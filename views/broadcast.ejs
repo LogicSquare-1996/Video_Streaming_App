@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broadcast - Live Stream</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="broadcast-container">
+        <div class="stream-info">
+            <h2>Broadcasting Room</h2>
+            <p>Room ID: <span id="roomId"><%= roomId %></span></p>
+            <button id="copyLink" class="btn btn-secondary">Copy Join Link</button>
+        </div>
+        <div class="video-container">
+            <video id="localVideo" autoplay muted></video>
+            <div class="controls">
+                <button id="startStream" class="btn btn-primary">Go Live</button>
+                <button id="stopStream" class="btn btn-danger" disabled>End Stream</button>
+                <button id="toggleVideo" class="btn btn-secondary">🎥</button>
+                <button id="toggleAudio" class="btn btn-secondary">🎤</button>
+            </div>
+        </div>
+        <div class="viewers-count">
+            <span id="viewerCount">0</span> viewers
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/broadcast.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Stream</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="viewer-container">
+        <div class="stream-info">
+            <h2>Live Stream</h2>
+            <div class="meeting-info">
+                <div class="meeting-info-item">
+                    <span class="meeting-info-label">Meeting ID:</span>
+                    <span class="meeting-info-value room-id"><%= roomId %></span>
+                </div>
+                <div class="meeting-info-item">
+                    <span class="meeting-info-label">Join URL:</span>
+                    <span class="meeting-info-value room-id" id="joinUrl"></span>
+                </div>
+            </div>
+        </div>
+        <div class="video-container">
+            <video id="remoteVideo" autoplay></video>
+            <div class="controls">
+                <button id="joinStream" class="control-btn control-btn-primary">Join</button>
+                <button id="leaveStream" class="control-btn control-btn-danger" style="display: none;">Leave</button>
+                <button id="toggleVideo" class="control-btn control-btn-secondary" disabled>🎥</button>
+                <button id="toggleAudio" class="control-btn control-btn-secondary" disabled>🎤</button>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/viewer.js"></script>
+</body>
+</html>
